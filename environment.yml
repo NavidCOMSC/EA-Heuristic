@@ -1,0 +1,10 @@
+name: ea
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10 # Explicitly specify Python version (3.9 or 3.10 recommended)
+  - jupyter # Includes Jupyter Notebook/Lab and its dependencies
+  - pandas # Data manipulation library
+  - numpy # Numerical computing library
+  #- certifi
