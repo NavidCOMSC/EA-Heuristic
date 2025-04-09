@@ -7,4 +7,4 @@ dependencies:
   - jupyter # Includes Jupyter Notebook/Lab and its dependencies
   - pandas # Data manipulation library
   - numpy # Numerical computing library
-  #- certifi
+  - openpyxl # Excel file reading/writing library
