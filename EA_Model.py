@@ -44,16 +44,8 @@ def randSol(instance):
 
 
 def evaluate(sol, instance):
-    """_summary_
-
-    Args:
-        sol (_type_): _description_
-        instance (_type_): _description_
-
-    Returns:
-        _type_: _description_
-
-    Evaluate the fitness values and return the number of unallocated jobs, delayed jobs and overallocated jobs.
+    """
+    Evaluate the solution and return the number of unallocated jobs, delayed and overallocated jobs.
     """
     instance.reset()
     for g in sol:
@@ -72,3 +64,123 @@ def evaluate(sol, instance):
             countOver = countOver + 1
 
     return (unalloc + over), unalloc, countOver, over
+
+
+def timeMutate(genome, instance):
+    """
+    Mutate the genome by moving the job with the longest duration to the front of the genome.
+    """
+    tl = datetime.timedelta(minutes=0)
+    gene = None
+
+    for _ in range(10):
+        x = random.randint(0, len(genome) - 1)
+        g = genome[x]
+        jb = g[1].split(":")[0]
+        if instance.jobs[jb].duration > tl:
+            tl = instance.jobs[jb].duration
+            gene = x
+
+    t = genome[gene]
+    genome.pop(gene)
+    genome.insert(0, t)
+    return genome
+
+
+def mutate(genome, instance):  # TODO: comment this function
+    """ """
+    ch = random.randint(0, 3)
+    if ch == 1:
+        n = random.randint(0, len(genome) - 1)
+        availStaff = instance.getListStaff()
+
+        j = genome[n][1].split(":")[0]
+        theJob = instance.jobs[j]
+        rStaff = random.choice(availStaff)
+        while not theJob.check(instance.staff[rStaff]):
+            rStaff = random.choice(availStaff)
+        genome[n][0] = rStaff
+
+    if ch == 2:
+        x = random.randint(0, len(genome) - 1)
+        y = random.randint(0, len(genome) - 1)
+        t = genome[x]
+        genome.pop(x)
+        genome.insert(y, t)
+    if ch == 3:
+        genome = timeMutate(genome)
+    return genome
+
+
+def copyG(genome):
+    """
+    copy method for the genome
+    Args:
+        genome (_type_): _description_
+    """
+    n = []
+    for g in genome:
+        n.append(g.copy())
+
+    return n
+
+
+def contains(genome, jCode):
+    """
+    Check if the genome contains a job code.
+    Args:
+        genome (_type_): _description_
+        jCode (_type_): _description_
+    """
+    for j in genome:
+        if j[1] == jCode:
+            return True
+    return False
+
+
+def xo(pA, pB):
+    """
+    Crossover function for the EA model.
+    Args:
+        pA (_type_): _description_
+        pB (_type_): _description_
+    """
+    if len(pA) != len(pB):
+        print("Parent len mismatch")
+
+    child = []
+    for c in range(len(pA)):
+        if not contains(child, pA[c][1]):
+            child.append(pA[c].copy())
+        if not contains(child, pB[c][1]):
+            child.append(pB[c].copy())
+
+    return child
+
+
+def tour(pop):
+    """
+    Tournament selection function for the EA model.
+    Args:
+        pop (_type_): _description_
+    """
+    p1 = random.choice(pop)
+    p2 = random.choice(pop)
+
+    if p1[0] < p2[0]:
+        return p1
+    else:
+        return p2
+
+
+def rip(pop):
+    """
+    Roulette selection function for the EA model.
+    """
+    p1 = random.choice(pop)
+    p2 = random.choice(pop)
+
+    if p1[0] > p2[0]:
+        return p1
+    else:
+        return p2
