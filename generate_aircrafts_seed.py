@@ -115,7 +115,7 @@ def generate_aircraft_instances(
             .astype(str)
             .apply(lambda x: x.replace("nan", "").strip(" ,"))
         )
-        df.to_csv(f"{output_dir}/aircrafts_ID_{instance_id}.csv", index=False)
+        df.to_csv(f"{output_dir}/aircrafts_sample_{instance_id}.csv", index=False)
 
     for instance_id in range(1, num_instances + 1):
         generate_single_instance(instance_id)
