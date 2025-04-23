@@ -88,7 +88,7 @@ class aircraft:
     def __init__(self, planeID, arrival, departure):
         if departure < arrival:
             print("Error! departure before arrival. Plane " + str(planeID))
-            
+
         self.aircraftID = planeID
         #         aircraft id
         self.arrival = arrival
@@ -104,8 +104,8 @@ class aircraft:
     def over(self):
 
         if self.available > self.departure:
-            d=self.available-self.departure
-            m=d.total_seconds()/60
+            d = self.available - self.departure
+            m = d.total_seconds() / 60
             return m
         return 0
 
