@@ -104,9 +104,10 @@ class aircraft:
     def over(self):
 
         if self.available > self.departure:
-            d = self.available - self.departure
-            m = d.total_seconds() / 60
-            return m
+            return 10
+            # d = self.available - self.departure
+            # m = d.total_seconds() / 60
+            # return m
         return 0
 
     def validate(self):
