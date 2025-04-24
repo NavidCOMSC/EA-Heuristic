@@ -1,6 +1,6 @@
-import typing
+from typing import List, Tuple, Dict, Any
 import random
-from datetime import datetime, timedelta
+import datetime
 
 
 """
@@ -47,7 +47,7 @@ def evaluate(sol, instance):
     """
     Evaluate the solution and return the number of unallocated jobs, delayed and overallocated jobs.
     """
-    instance.reset()
+    # instance.reset()
     for g in sol:
         j = g[1].split(":")[0]
         instance.allocate(instance.staff[g[0]], instance.jobs[j])
@@ -110,7 +110,7 @@ def mutate(genome, instance):  # TODO: comment this function
         genome.pop(x)
         genome.insert(y, t)
     if ch == 3:
-        genome = timeMutate(genome)
+        genome = timeMutate(genome, instance)
     return genome
 
 
