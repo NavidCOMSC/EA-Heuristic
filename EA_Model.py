@@ -88,7 +88,9 @@ def timeMutate(genome, instance):
 
 
 def mutate(genome, instance):  # TODO: comment this function
-    """ """
+    """
+    Mutate the genome by changing a random job to a random staff member or moving a job to a different position.
+    """
     ch = random.randint(0, 3)
     if ch == 1:
         n = random.randint(0, len(genome) - 1)
