@@ -47,7 +47,7 @@ def evaluate(sol, instance):
     """
     Evaluate the solution and return the number of unallocated jobs, delayed and overallocated jobs.
     """
-    # instance.reset()
+    instance.reset()
     for g in sol:
         j = g[1].split(":")[0]
         instance.allocate(instance.staff[g[0]], instance.jobs[j])
