@@ -245,9 +245,10 @@ class problem:
         self.jobs = {}
         self.staff = {}
 
-        self.date_format = "%Y-%m-%d %H:%M:%S"
-        self.time_format = "%H:%M:%S"
-
+        # self.date_format = "%Y-%m-%d %H:%M:%S"
+        # self.time_format = "%H:%M:%S"
+        self.date_format = "%d/%m/%Y"
+        self.time_format = "%H:%M"
         self.addStaff(people)
         self.addAircraftAndJobs(planes, work_packages)
 
