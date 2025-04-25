@@ -1,11 +1,11 @@
-Filename,Total Aircraft Serial Numbers,Total Turnaround Time,Average Turnaround Time,Total WPs,Average WPs,Total Work Minutes
-aircrafts_sample_1,20,253:00,12:39,53,2.65,5450
-aircrafts_sample_10,20,282:48,14:08,47,2.35,4540
-aircrafts_sample_2,20,267:12,13:21,51,2.55,4960
-aircrafts_sample_3,20,252:12,12:36,57,2.85,5410
-aircrafts_sample_4,20,273:00,13:39,55,2.75,5250
-aircrafts_sample_5,20,329:00,16:27,57,2.85,5650
-aircrafts_sample_6,20,275:24,13:46,56,2.8,5370
-aircrafts_sample_7,20,193:48,9:41,52,2.6,4890
-aircrafts_sample_8,20,226:36,11:19,58,2.9,5330
-aircrafts_sample_9,20,251:24,12:34,51,2.55,5370
+Filename,Total Aircraft Serial Numbers,Total Turnaround Time,Average Turnaround Time,Total WPs,Average WPs,Total Work Minutes,Average Personnel per WP
+aircrafts_sample_1,20,253:00,12:39,53,2.65,5450,2.43
+aircrafts_sample_10,20,282:48,14:08,47,2.35,4540,2.34
+aircrafts_sample_2,20,267:12,13:21,51,2.55,4960,2.41
+aircrafts_sample_3,20,252:12,12:36,57,2.85,5410,2.46
+aircrafts_sample_4,20,273:00,13:39,55,2.75,5250,2.4
+aircrafts_sample_5,20,329:00,16:27,57,2.85,5650,2.35
+aircrafts_sample_6,20,275:24,13:46,56,2.8,5370,2.43
+aircrafts_sample_7,20,193:48,9:41,52,2.6,4890,2.38
+aircrafts_sample_8,20,226:36,11:19,58,2.9,5330,2.43
+aircrafts_sample_9,20,251:24,12:34,51,2.55,5370,2.49
