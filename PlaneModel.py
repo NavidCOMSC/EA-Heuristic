@@ -286,7 +286,7 @@ class problem:
                 str(row["A/C departure Date"]), str(row["A/C departure Time"])
             )
             a = aircraft(
-                str(row["Aicraft (A/C) Serial Number"]), landingTime, departTime
+                str(row["Aircraft (A/C) Serial Number"]), landingTime, departTime
             )
 
             #     Add jobs
