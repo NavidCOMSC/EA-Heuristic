@@ -93,7 +93,7 @@ def generate_aircraft_instances(
 
                 aircraft_data.append(
                     {
-                        "Aicraft (A/C) Serial Number": aircraft_id,
+                        "Aircraft (A/C) Serial Number": aircraft_id,
                         "A/C Landing Date": landing_time.strftime("%d/%m/%Y"),
                         "A/C Landing Time": landing_time.strftime("%H:%M"),
                         "A/C departure Date": departure_time.strftime("%d/%m/%Y"),
